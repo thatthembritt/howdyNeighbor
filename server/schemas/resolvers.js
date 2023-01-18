@@ -10,6 +10,12 @@ const resolvers = {
       }
       throw new AuthenticationError("Must be logged in");
     },
+    users: async () => {
+      return User.find();
+    },
+    helpers: async () => {
+      return Helper.find();
+    }
   },
 
   Mutation: {

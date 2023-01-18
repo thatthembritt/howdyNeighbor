@@ -1,0 +1,18 @@
+[
+    {
+        "username": "ultimatehelpee",
+        "email": "abc123@gmail.com",
+        "password": "supersecretpassword",
+        "first_name": "Zach",
+        "last_name": "Weston",
+        "zip_code": "32792"
+    },
+    {
+      "username": "ineedhelp",
+      "email": "helpme@gmail.com",
+      "password": "supersupersecretpassword",
+      "first_name": "Joe",
+      "last_name": "Biden",
+      "zip_code": "20230"
+    }
+]
