@@ -20,7 +20,11 @@ import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import "./style.css";
 
-function App() {
+
+// Need to figure out how to set up footer, as it appears to be being called as a page.
+
+
+  //OLD code that was replaced below
   // const [currentPage, setCurrentPage] = useState('Home');
 
   // const renderPage = () => {
@@ -45,6 +49,8 @@ const httpLink = createHttpLink({
   uri: "/graphql",
 });
 
+
+
 console.log(httpLink);
 
 const authLink = setContext((_, { headers }) => {
@@ -63,7 +69,7 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
+function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
