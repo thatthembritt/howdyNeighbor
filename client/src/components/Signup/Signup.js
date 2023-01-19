@@ -60,10 +60,10 @@ const SignupForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setUserFormData({ ...userFormData, [name]: value });
-  // };
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -149,13 +149,34 @@ const SignupForm = () => {
         />
       </Form.Item>
       <Form.Item name={["user", "zipcode"]} label="ZIPCODE">
-        <Input />
+        <Input
+          type="text"
+          placeholder="Your zipcode"
+          name="zipcode"
+          onChange={handleInputChange}
+          value={userFormData.username}
+          required
+        />
       </Form.Item>
       <Form.Item name={["user", "email"]} label="EMAIL">
-        <Input />
+        <Input
+          type="text"
+          placeholder="Your email"
+          name="email"
+          onChange={handleInputChange}
+          value={userFormData.username}
+          required
+        />
       </Form.Item>
       <Form.Item name={["user", "password"]} label="PASSWORD">
-        <Input />
+        <Input
+          type="text"
+          placeholder="Create a password"
+          name="password"
+          onChange={handleInputChange}
+          value={userFormData.username}
+          required
+        />
       </Form.Item>
       <Form.Item
         wrapperCol={{
