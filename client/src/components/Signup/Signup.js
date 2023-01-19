@@ -6,6 +6,7 @@ import { Button, Form, Input, Alert } from "antd";
 import { ADD_USER } from "../../utils/mutations";
 import Auth from "../../utils/auth";
 import { useMutation } from "@apollo/client";
+import { FormContext } from "antd/es/form/context";
 
 //Styling section
 const layout = {
@@ -116,11 +117,36 @@ const SignupForm = () => {
       >
         Something went wrong with your signup!
       </Alert>
+
       <Form.Item name={["user", "firstname"]} label="FIRST NAME">
-        <Input />
+        <Input
+          type="text"
+          placeholder="Your First Name"
+          name="first_name"
+          onChange={handleInputChange}
+          value={userFormData.username}
+          required
+        />
       </Form.Item>
       <Form.Item name={["user", "lastname"]} label="LAST NAME">
-        <Input />
+        <Input
+          type="text"
+          placeholder="Your Last Name"
+          name="first_name"
+          onChange={handleInputChange}
+          value={userFormData.username}
+          required
+        />
+      </Form.Item>
+      <Form.Item name={["user", "username"]} label="USER NAME">
+        <Input
+          type="text"
+          placeholder="Your username"
+          name="username"
+          onChange={handleInputChange}
+          value={userFormData.username}
+          required
+        />
       </Form.Item>
       <Form.Item name={["user", "zipcode"]} label="ZIPCODE">
         <Input />

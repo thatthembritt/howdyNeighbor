@@ -20,6 +20,10 @@ import Signup from "./components/Signup/Signup";
 import "./style.css";
 
 function App() {
+// Need to figure out how to set up footer, as it appears to be being called as a page.
+
+
+  //OLD code that was replaced below
   // const [currentPage, setCurrentPage] = useState('Home');
 
   // const renderPage = () => {
