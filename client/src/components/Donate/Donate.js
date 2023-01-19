@@ -10,8 +10,6 @@ export default function Donate() {
             <h2>
                 HOWDYNEIGHBOR IS COMMUNITY DRIVEN & BACKED BY CHARITABLE DONATIONS.
             </h2>
-
-
         </div>
     )
 }

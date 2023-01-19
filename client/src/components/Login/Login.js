@@ -1,12 +1,10 @@
 import React from "react";
-import "./index.css";
+import "./style.css";
 import {
-  AlignCenterOutlined,
-  BorderOuterOutlined,
   LockOutlined,
   UserOutlined,
 } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 
 const contentStyle = {
   background: "#B3D0B3",
@@ -100,7 +98,8 @@ const App = () => {
         >
           SIGN IN
         </Button>
-        <a href="" style={linkStyle}>
+        <a
+          href="#signup" style={linkStyle}>
           NEW TO THE APP? SIGN UP HERE
         </a>
       </Form.Item>

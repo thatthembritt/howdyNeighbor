@@ -7,7 +7,6 @@ import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
 import "./style.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Home');
