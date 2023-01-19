@@ -1,8 +1,6 @@
 import React from "react";
-
-import React from "react";
-import "./index.css";
-import { Button, Form, Input, InputNumber } from "antd";
+import "./style.css";
+import { Button, Form, Input } from "antd";
 const layout = {
   labelCol: {
     span: 8,
