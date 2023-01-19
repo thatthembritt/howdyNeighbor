@@ -1,10 +1,12 @@
 import React from 'react';
 import './style.css';
 
+const logo = require('../../Assets/howdyneighbor_4.png');
+
 export default function Navbar({ currentPage, handlePageChange }) {
   return (
     <div className="container">
-      <img src="./howdyneighbor_4.png"></img>
+      <img src={logo} alt="logo"></img>
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <a
