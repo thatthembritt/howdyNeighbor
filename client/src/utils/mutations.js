@@ -10,7 +10,7 @@ mutation login($email: String!, $password: String!) {
         }
     }
 }
-`;
+`; 
 
 export const ADD_USER = gql`
 mutation addUser($username: String!, $email: String!, $password: String!, $first_name: Sting!, $last_name: String!, $zip_code: String!) {

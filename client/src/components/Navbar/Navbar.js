@@ -6,7 +6,7 @@ export default function Navbar({ currentPage, handlePageChange }) {
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <a
-          href="#login"
+          href="/login"
           onClick={() => handlePageChange('Login')}
           className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
         >
@@ -15,7 +15,7 @@ export default function Navbar({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#signup"
+          href="/signup"
           onClick={() => handlePageChange('Signup')}
           className={currentPage === 'Signup' ? 'nav-link active' : 'nav-link'}
         >
@@ -24,7 +24,7 @@ export default function Navbar({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#about"
+          href="/about"
           onClick={() => handlePageChange('About')}
           className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
         >
@@ -33,7 +33,7 @@ export default function Navbar({ currentPage, handlePageChange }) {
       </li>
       <li className="nav-item">
         <a
-          href="#donate"
+          href="/donate"
           onClick={() => handlePageChange('Donate')}
           className={currentPage === 'Donate' ? 'nav-link active' : 'nav-link'}
         >
