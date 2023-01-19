@@ -60,10 +60,10 @@ const SignupForm = () => {
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setUserFormData({ ...userFormData, [name]: value });
-  };
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setUserFormData({ ...userFormData, [name]: value });
+  // };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
