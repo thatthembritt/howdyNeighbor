@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, Alert } from "antd";
+
+//bring in file from utils folder.
+import { ADD_USER } from "../../utils/mutations";
+import Auth from "../../utils/auth";
+import { useMutation } from "@apollo/client";
+
+//Styling section
 const layout = {
   labelCol: {
     span: 8,
@@ -34,8 +41,60 @@ const validateMessages = {
   },
 };
 /* eslint-enable no-template-curly-in-string */
+// add
 
-const App = () => {
+const SignupForm = () => {
+  const [addUser] = useMutation(ADD_USER);
+  // set initial form state
+  const [userFormData, setUserFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    first_name: "",
+    last_name: "",
+    zip_code: ""
+  });
+  // set state for form validation
+  const [validated] = useState(false);
+  // set state for alert
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    try {
+      const { data } = await addUser({ variables: { ...userFormData } });
+
+      Auth.login(data.addUser.token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+
+    setUserFormData({
+      username: "",
+      email: "",
+      password: "",
+      first_name: "",
+      last_name: "",
+      zip_code: ""
+    });
+  };
+
+
+
   const onFinish = (values) => {
     console.log(values);
   };
@@ -46,7 +105,17 @@ const App = () => {
       onFinish={onFinish}
       validateMessages={validateMessages}
       style={contentStyle}
+      validated={validated}
+      onSubmit={handleFormSubmit}
     >
+      <Alert
+        dismissible
+        onClose={() => setShowAlert(false)}
+        show={showAlert}
+        variant="danger"
+      >
+        Something went wrong with your signup!
+      </Alert>
       <Form.Item name={["user", "firstname"]} label="FIRST NAME">
         <Input />
       </Form.Item>
@@ -75,4 +144,5 @@ const App = () => {
     </Form>
   );
 };
-export default App;
+
+export default SignupForm;
