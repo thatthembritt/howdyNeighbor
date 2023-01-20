@@ -2,7 +2,7 @@
 import decode from "jwt-decode";
 
 // create a new class to instantiate for a user
-const AuthService = {
+const Auth = {
   // get user data
   getProfile() {
     return decode(this.getToken());
@@ -42,8 +42,8 @@ const AuthService = {
     // Clear user token and profile data from localStorage
     localStorage.removeItem("id_token");
     // this will reload the page and reset the state of the application
-    window.location.assign("/");
+    window.location.assign("/home");
   },
 }
 
-export default AuthService;
+export default Auth;
