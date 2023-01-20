@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import React from "react";
 
 import {
@@ -10,47 +9,22 @@ import {
 import { setContext } from "@apollo/client/link/context"; // function :D
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { Navigate } from "react-router-dom";
 import About from "./components/About/About";
 import Donate from "./components/Donate/Donate";
 import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
+import Navbar from "./components/Navbar/Navbar";
+import NavbarLoggedIn from "./components/Navbar/NavbarLoggedIn";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
-import Search from "./components/Search/Search"
+import Dashboard from "./components/Dashboard/Dashboard";
+import Auth from "./utils/auth";
 import "./style.css";
 
-
-// Need to figure out how to set up footer, as it appears to be being called as a page.
-
-
-  //OLD code that was replaced below
-  // const [currentPage, setCurrentPage] = useState('Home');
-
-  // const renderPage = () => {
-  //   if (currentPage === 'Login') {
-  //     return <Login />;
-  //   }
-  //   if (currentPage === 'Signup') {
-  //     return <Signup />;
-  //   }
-  //   if (currentPage === 'About') {
-  //     return <About />;
-  //   }
-  //   if (currentPage === 'Donate') {
-  //     return <Donate />;
-  //   } else {
-  //     return <Home />;
-  //   }
-  // };
-
-  // const handlePageChange = (page) => setCurrentPage(page);
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
-
-
 
 console.log(httpLink);
 
@@ -70,34 +44,82 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
+
+const AuthWrapper = ({isAuthenticated}) => {
+  return isAuthenticated ? (
+    <Navigate to="/dashboard" replace />
+  ) : (
+    <Navigate to="/home" replace />
+  );
+};
+
+const Logout = ({isAuthenticated}) => {
+  if (isAuthenticated) {
+    Auth.logout("id_token")
+    return <Navigate to="/home" replace />
+  }
+}
+
 function App() {
-  return (
-    <ApolloProvider client={client}>
-      <Router>
+  const isAuthenticated = () => {
+    if (localStorage.getItem("id_token")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  if (isAuthenticated()) {
+    return (
+      <ApolloProvider client={client}>
+        <Router>
         <>
-          <Header />
+          <NavbarLoggedIn />
           <Routes>
-            <Route path="/" element={<Donate />} />
+            <Route
+              path="/"
+              element={<AuthWrapper isAuthenticated={isAuthenticated} />}
+            />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
-            <Route path="/signup" element={<Signup />} />
             <Route path="/donate" element={<Donate />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/search" element={<Search/>}/>
-            <Route path="/footer" element={<Footer />} />
+            <Route path="/logout" element={<Logout isAuthenticated={isAuthenticated} />} />
             <Route
               path="*"
               element={<h1 className="display-2">Wrong page!</h1>}
             />
           </Routes>
+          <Footer />
         </>
-      </Router>
-    </ApolloProvider>
-    // <div>
-    //   <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-    //   {renderPage()}
-    //   <Footer />
-    // </div>
-  );
+        </Router>
+      </ApolloProvider>
+    );
+  } else {
+    return (
+      <ApolloProvider client={client}>
+        <Router>
+        <>
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={<AuthWrapper isAuthenticated={isAuthenticated} />}
+            />
+            <Route path="/home" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/donate" element={<Donate />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="*"
+              element={<h1 className="display-2">Wrong page!</h1>}
+            />
+          </Routes>
+          <Footer />
+        </>
+        </Router>
+      </ApolloProvider>
+    );
+  }
 }
 
 export default App;
