@@ -18,7 +18,7 @@ export const LOGIN_USER = gql`
     }
   }
 `; 
-
+// pulled this querry from the sandbox that successfully added a user
 export const ADD_USER = gql`
 mutation addUser($username: String, $email: String, $password: String, $firstName: String, $lastName: String, $zipCode: String) {
   addUser(username: $username, email: $email, password: $password, first_name: $firstName, last_name: $lastName, zip_code: $zipCode) {

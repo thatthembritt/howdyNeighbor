@@ -52,9 +52,9 @@ const Signup = () => {
     username: "",
     email: "",
     password: "",
-    first_name: "",
-    last_name: "",
-    zip_code: "",
+    firstName: "",
+    lastName: "",
+    zipCode: "",
   });
   // set state for form validation
   const [validated] = useState(false);
@@ -87,10 +87,10 @@ const Signup = () => {
     }
 
     setUserFormData({
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       username: "",
-      zip_code: "",
+      zipCode: "",
       email: "",
       password: "",
     });
@@ -108,25 +108,25 @@ const Signup = () => {
           Something went wrong with your login credentials!
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor="first_name">First Name</Form.Label>
+          <Form.Label htmlFor="firstName">First Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="create a unique username"
-            name="first_name"
+            name="firstName"
             onChange={handleInputChange}
-            value={userFormData.first_name}
+            value={userFormData.firstName}
             required
           />
           <Form.Control.Feedback type="invalid">
             First Name is required!
           </Form.Control.Feedback>
-          <Form.Label htmlFor="last_name">Last Name</Form.Label>
+          <Form.Label htmlFor="lastName">Last Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="create a unique username"
-            name="last_name"
+            name="lastName"
             onChange={handleInputChange}
-            value={userFormData.last_name}
+            value={userFormData.lastName}
             required
           />
           <Form.Control.Feedback type="invalid">
@@ -148,13 +148,13 @@ const Signup = () => {
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group>
-          <Form.Label htmlFor="zip_code">Zip Code</Form.Label>
+          <Form.Label htmlFor="zipCode">Zip Code</Form.Label>
           <Form.Control
             type="text"
             placeholder="Your zip code"
-            name="zip_code"
+            name="zipCode"
             onChange={handleInputChange}
-            value={userFormData.zip_code}
+            value={userFormData.zipCode}
             required
           />
           <Form.Control.Feedback type="invalid">
