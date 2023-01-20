@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, Alert } from "react-bootstrap";
+import { Form, Button, Alert, FormControl, Container } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../../utils/mutations";
 
 import Auth from "../../utils/auth";
+import "./style.css";
 
 const Login = () => {
-  const [userFormData, setUserFormData] = useState({ username: "", password: "" });
+  const [userFormData, setUserFormData] = useState({
+    username: "",
+    password: "",
+  });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
 
@@ -54,7 +58,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <Container className="formContainer">
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible
@@ -65,43 +69,45 @@ const Login = () => {
           Something went wrong with your login credentials!
         </Alert>
         <Form.Group>
-          <Form.Label htmlFor="username">username</Form.Label>
-          <Form.Control
+          <Form.Label htmlFor="username">USERNAME</Form.Label>
+          <FormControl
             type="text"
-            placeholder="Your username"
+            id="usernameField"
+            placeholder=""
             name="username"
             onChange={handleInputChange}
             value={userFormData.username}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          <FormControl.Feedback type="invalid">
             Username is required!
-          </Form.Control.Feedback>
+          </FormControl.Feedback>
         </Form.Group>
 
         <Form.Group>
-          <Form.Label htmlFor="password">Password</Form.Label>
-          <Form.Control
+          <Form.Label htmlFor="password">PASSWORD</Form.Label>
+          <FormControl
             type="password"
-            placeholder="Your password"
+            placeholder=""
             name="password"
             onChange={handleInputChange}
             value={userFormData.password}
             required
           />
-          <Form.Control.Feedback type="invalid">
+          <FormControl.Feedback type="invalid">
             Password is required!
-          </Form.Control.Feedback>
+          </FormControl.Feedback>
         </Form.Group>
         <Button
           disabled={!(userFormData.username && userFormData.password)}
           type="submit"
-          variant="success"
+          variant="primary"
+          size="sm"
         >
-          Submit
+          SUBMIT
         </Button>
       </Form>
-    </>
+    </Container>
   );
 };
 
