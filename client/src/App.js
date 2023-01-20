@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import React from "react";
 
 import {
@@ -10,7 +9,7 @@ import {
 import { setContext } from "@apollo/client/link/context"; // function :D
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { Navigate } from "react-router-dom";
 import About from "./components/About/About";
 import Donate from "./components/Donate/Donate";
 import Footer from "./components/Footer/Footer";
@@ -18,6 +17,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
+import Dashboard from "./components/Dashboard/Dashboard";
 import "./style.css";
 
 
@@ -49,8 +49,6 @@ const httpLink = createHttpLink({
   uri: "/graphql",
 });
 
-
-
 console.log(httpLink);
 
 const authLink = setContext((_, { headers }) => {
@@ -69,32 +67,73 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-function App() {
-  return (
+
+const AuthWrapper = ({isAuthenticated}) => {
+  return isAuthenticated ? (
     <ApolloProvider client={client}>
+      <Navigate to="/dashboard" replace />
       <Router>
-        <>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Donate />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/footer" element={<Footer />} />
-            <Route
-              path="*"
-              element={<h1 className="display-2">Wrong page!</h1>}
-            />
-          </Routes>
-        </>
+      <>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={<AuthWrapper isAuthenticated={isAuthenticated} />}
+          />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route
+            path="*"
+            element={<h1 className="display-2">Wrong page!</h1>}
+          />
+        </Routes>
+        <Footer />
+      </>
       </Router>
     </ApolloProvider>
-    // <div>
-    //   <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-    //   {renderPage()}
-    //   <Footer />
-    // </div>
+    
+  ) : (
+    <ApolloProvider client={client}>
+      <Navigate to="/home" replace />
+      <Router>
+      <>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={<AuthWrapper isAuthenticated={isAuthenticated} />}
+          />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/donate" element={<Donate />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="*"
+            element={<h1 className="display-2">Wrong page!</h1>}
+          />
+        </Routes>
+        <Footer />
+      </>
+      </Router>
+    </ApolloProvider>
+  );
+};
+
+function App() {
+  const isAuthenticated = () => {
+    if (localStorage.getItem("id_token")) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  return (
+    
   );
 }
 
