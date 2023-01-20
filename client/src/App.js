@@ -18,7 +18,7 @@ import NavbarLoggedIn from "./components/Navbar/NavbarLoggedIn";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Search from "./components/Search/Search";
 import Auth from "./utils/auth";
 import "./style.css";
 
@@ -47,7 +47,7 @@ const client = new ApolloClient({
 
 const AuthWrapper = ({isAuthenticated}) => {
   return isAuthenticated ? (
-    <Navigate to="/dashboard" replace />
+    <Navigate to="/search" replace />
   ) : (
     <Navigate to="/home" replace />
   );
@@ -79,7 +79,7 @@ function App() {
               path="/"
               element={<AuthWrapper isAuthenticated={isAuthenticated} />}
             />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/search" element={<Search />} />
             <Route path="/about" element={<About />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/logout" element={<Logout isAuthenticated={isAuthenticated} />} />
