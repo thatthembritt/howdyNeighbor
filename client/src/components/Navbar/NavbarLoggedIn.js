@@ -3,45 +3,45 @@ import './style.css';
 
 const logo = require('../../Assets/howdyneighbor_4.png');
 
-export default function Navbar({ currentPage, handlePageChange }) {
+export default function NavbarLoggedIn({ currentPage, handlePageChange }) {
   return (
     <div className="container">
       <img src={logo} alt="logo"></img>
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <a
-            href="/login"
-            onClick={() => handlePageChange('Login')}
-            className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}
+            href="/dashboard"
+            onClick={() => handlePageChange('Dashboard')}
+            className={currentPage === 'Dashboard' ? 'nav-link active' : 'nav-link'}
           >
-            Login
+            Find Help
           </a>
         </li>
         <li className="nav-item">
           <a
-            href="/signup"
-            onClick={() => handlePageChange('Signup')}
-            className={currentPage === 'Signup' ? 'nav-link active' : 'nav-link'}
-          >
-            Sign Up
-          </a>
-        </li>
-        <li className="nav-item">
-          <a
-            href="/about"
+            href="/About"
             onClick={() => handlePageChange('About')}
             className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
           >
-            About Us
+           About
           </a>
         </li>
         <li className="nav-item">
           <a
-            href="/donate"
+            href="/Donate"
             onClick={() => handlePageChange('Donate')}
             className={currentPage === 'Donate' ? 'nav-link active' : 'nav-link'}
           >
             Donate
+          </a>
+        </li>
+        <li className="nav-item">
+          <a
+            href="/logout"
+            onClick={() => handlePageChange('Logout')}
+            className={currentPage === 'Logout' ? 'nav-link active' : 'nav-link'}
+          >
+            Logout
           </a>
         </li>
       </ul>

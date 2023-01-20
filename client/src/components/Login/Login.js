@@ -42,7 +42,6 @@ const Login = () => {
 
       console.log(data);
       Auth.login(data.login.token);
-      console.log(data.login.token);
     } catch (e) {
       console.error(e);
     }
