@@ -10,9 +10,9 @@ export default function NavbarLoggedIn({ currentPage, handlePageChange }) {
       <ul className="nav nav-tabs">
         <li className="nav-item">
           <a
-            href="/dashboard"
-            onClick={() => handlePageChange('Dashboard')}
-            className={currentPage === 'Dashboard' ? 'nav-link active' : 'nav-link'}
+            href="/search"
+            onClick={() => handlePageChange('Search')}
+            className={currentPage === 'Search' ? 'nav-link active' : 'nav-link'}
           >
             Find Help
           </a>
