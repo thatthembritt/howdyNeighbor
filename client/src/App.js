@@ -18,6 +18,7 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
+import Search from "./components/Search/Search"
 import "./style.css";
 
 
@@ -81,6 +82,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/donate" element={<Donate />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/search" element={<Search/>}/>
             <Route path="/footer" element={<Footer />} />
             <Route
               path="*"
