@@ -1,15 +1,21 @@
-import React from 'react'
-import './style.css';
+import React from "react";
+import "./style.css";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import CheckoutForm from "./CheckoutForm";
 
-export default function Donate() {
-    return (
-        <div className="container">
-            <h1>
-                "ALONE WE CAN DO SO LITTLE; TOGETHER, WE CAN DO SO MUCH."
-            </h1>
-            <h2>
-                HOWDYNEIGHBOR IS COMMUNITY DRIVEN & BACKED BY CHARITABLE DONATIONS.
-            </h2>
+const stripePromise = loadStripe("pk_live_51MSooVLeILrCDSqnE1nriDqDHyaAAmdE1d6iWoAw0YBblsiGowT2e98s3NkSCPgh9hwf6wf44A8GmwFJSWFhqtjG00fWzzTZij");
+
+const Donate = () => {
+  return (
+    <div className="Donate">
+        <div>
+          <Elements stripe={stripePromise}>
+            <CheckoutForm />
+          </Elements>
         </div>
-    )
-}
+    </div>
+  );
+};
+
+export default Donate;
