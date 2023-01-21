@@ -6,17 +6,21 @@ import { FILTER_HELPERS } from "../../utils/mutations";
 import { gql, useMutation } from "@apollo/client";
 
 export default function Search() {
+  //const [formInput, setFormInput] = useState([]);
+  //const [filterHelpers] = useMutation(FILTER_HELPERS);
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    let myArray = []
 
     const formData = Object.fromEntries(new FormData(event.target).entries());
-
     console.log(Object.keys(formData));
+    for(let key in formData){
+      formData[key] = Boolean(formData[key]);
+    }
+    Object.keys(myArray).forEach(i => {myArray[i] = true});
     console.log(formData);
-    //const [formInput, setFormInput] = useState([]);
-    //const [filterHelpers] = useMutation(FILTER_HELPERS);
-    //filterHelpers({variables: {yard_help: true}})
-
+    //filterHelpers({variables: {}})
   };
   // pull all values from (Object.keys(formData) and set them as true and query.
 
@@ -77,6 +81,7 @@ export default function Search() {
               name="pet_help"
               type="checkbox"
               className="checkoption"
+              id="pet-help"
               value="1"
             />
             <span>Pet Help</span>
