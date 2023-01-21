@@ -18,7 +18,7 @@ const resolvers = {
     },
 
     filterHelpers: async (parent, args, context) => {
-    // if (context.user) {
+     if (context.user) {
        return await Helper.find({
          $or: [
            {
@@ -38,8 +38,8 @@ const resolvers = {
            },
          ],
        });
-     //}
-    //throw new AuthenticationError("Must be logged in");
+     }
+    throw new AuthenticationError("Must be logged in");
     },
   },
 

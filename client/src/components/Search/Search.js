@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style.css";
 //import {} from "../../utils/queries"
 import { Form, Button } from "react-bootstrap";
+import { FILTER_HELPERS } from "../../utils/mutations";
+import { gql, useMutation } from "@apollo/client";
 
 export default function Search() {
   const handleFormSubmit = (event) => {
@@ -10,8 +12,14 @@ export default function Search() {
     const formData = Object.fromEntries(new FormData(event.target).entries());
 
     console.log(Object.keys(formData));
+    console.log(formData);
+    //const [formInput, setFormInput] = useState([]);
+    //const [filterHelpers] = useMutation(FILTER_HELPERS);
+    //filterHelpers({variables: {yard_help: true}})
+
   };
-  // pull all values from (Object.keys(formData) and set them as true and querry.
+  // pull all values from (Object.keys(formData) and set them as true and query.
+
   return (
     <Form onSubmit={handleFormSubmit}>
       <div className="container">
