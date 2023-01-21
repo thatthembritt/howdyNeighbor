@@ -3,11 +3,20 @@ import "./style.css";
 //import {} from "../../utils/queries"
 import { Form, Button } from "react-bootstrap";
 import { FILTER_HELPERS } from "../../utils/mutations";
-import { gql, useMutation } from "@apollo/client";
+import { gql, useQuery } from "@apollo/client";
 
 export default function Search() {
-  //const [formInput, setFormInput] = useState([]);
+  const [formInput, setFormInput] = useState({
+    yard_help: "",
+    house_help: "",
+    auto_help: "",
+    tech_help: "",
+    pet_help: ""
+  });
   //const [filterHelpers] = useMutation(FILTER_HELPERS);
+  //const [formInput, {loading, data, error}] = useQuery(FILTER_HELPERS, {
+    //variables: {yard_help: formInput.yard_help, house_help: formInput.house_help, auto_help: formInput.auto_help, tech_help: formInput.tech_help, pet_help: formInput.pet_help}
+  //})
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -20,7 +29,7 @@ export default function Search() {
     }
     Object.keys(myArray).forEach(i => {myArray[i] = true});
     console.log(formData);
-    //filterHelpers({variables: {}})
+    formInput();
   };
   // pull all values from (Object.keys(formData) and set them as true and query.
 
