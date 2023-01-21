@@ -102,5 +102,4 @@ export default function Search() {
       </Button>
     </Form>
   );
-}
-export default Search;
+};

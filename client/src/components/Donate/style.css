@@ -1,21 +1,47 @@
 :root {
-  --main-bg: #fcc931;
+  --main-bg: #fff6ea;
+  --primary-bg: #b3d0b3;
+  --secondary-bg: #252827;
+  --tertiary-bg: #fcc931;
 }
 
-.btn-primary {
-  background-color: var(--main-bg);
-  color: #252827;
+#btn-primary-donate {
+  margin-top: 30px;
+  background-color: var(--tertiary-bg);
+  color: var(--secondary-bg);
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  display: flex;
 }
 
-.btn-sm {
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
+.donateFormContainer {
+  background-color: var(--tertiary-bg);
+  margin: 50px;
+  padding: 10px;
+  width: 600px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  outline: 2px solid #252827;
+  border-radius: 3px;
 }
 
-input[type="text"]#usernameField {
-  background-color: var(--main-bg);
+#donateInputFields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.formContainer {
-  background-color: var(--main-bg);
+#donateText {
+text-align: center;
+}
+
+#messageText{
+  padding: 0px;
+  font-size: x-large;
 }
