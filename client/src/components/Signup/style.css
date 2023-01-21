@@ -10,7 +10,7 @@
 
 .formContainerSignup {
   background-color: var(--primary-bg);
-  width: 300px;
+  width: 301px;
   height: 400px;
   display: flex;
   flex-direction: column;
