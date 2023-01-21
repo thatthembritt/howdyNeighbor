@@ -97,15 +97,17 @@ const Login = () => {
             required
           />
         </Form.Group>
+        <Form.Group id="inputFields">
+          <Button
+            disabled={!(userFormData.username && userFormData.password)}
+            type="submit"
+            id="btn-primary-login"
+            size="sm"
+          >
+            SIGN IN
+          </Button>
+        </Form.Group>
       </Form>
-      <Button
-        disabled={!(userFormData.username && userFormData.password)}
-        type="submit"
-        className="btn-primary"
-        size="sm"
-      >
-        SIGN IN
-      </Button>
     </Container>
   );
 };

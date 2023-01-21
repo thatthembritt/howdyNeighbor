@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./style.css";
-//import { Button, Form, Input, Alert } from "antd";
 import { Form, Button, Alert, FormControl, Container } from "react-bootstrap";
 
 //bring in file from utils folder.
@@ -60,7 +59,7 @@ const Signup = () => {
   };
 
   return (
-    <Container className="formContainer">
+    <Container className="formContainerSignup">
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         <Alert
           dismissible
@@ -135,14 +134,16 @@ const Signup = () => {
             required
           />
         </Form.Group>
-        <Button
-          disabled={!(userFormData.email && userFormData.password)}
-          type="submit"
-          className="btn-primary"
-          size="sm"
-        >
-          SUBMIT
-        </Button>
+        <Form.Group id="inputFields">
+          <Button
+            disabled={!(userFormData.email && userFormData.password)}
+            type="submit"
+            className="btn-primary-signup"
+            size="sm"
+          >
+            SUBMIT
+          </Button>
+        </Form.Group>
       </Form>
     </Container>
   );

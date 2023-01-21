@@ -5,14 +5,15 @@
   --tertiary-bg: #fcc931;
 }
 
-.btn-primary {
+#btn-primary-login {
   margin-top: 30px;
   background-color: var(--tertiary-bg);
   color: var(--secondary-bg);
   border-radius: 5px;
-  align-self: center;
-  width: 100px;
+  text-align: center;
+  width: 66px;
   font-weight: bold;
+  display: flex;
 }
 
 input[type="text"]#usernameField {
@@ -42,7 +43,7 @@ input[type="password"]#passwordField {
 
 .formContainer {
   background-color: var(--primary-bg);
-  width: 400px;
+  width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -57,4 +58,5 @@ input[type="password"]#passwordField {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
