@@ -1,34 +1,44 @@
-/* .login-form {
-  max-width: 300px;
-}
-.login-form-forgot {
-  float: right;
-}
-.ant-col-rtl .login-form-forgot {
-  float: left;
-}
-.login-form-button {
-  width: 100%;
-} */
-
 :root {
-  --main-bg: #fcc931;
+  --main-bg: #fff6ea;
+  --primary-bg: #b3d0b3;
+  --secondary-bg: #252827;
+  --tertiary-bg: #fcc931;
 }
 
 .btn-primary {
-  background-color: var(--main-bg);
-  color: #252827;
-}
-
-.btn-sm {
-  padding: 1rem 1.5rem;
+  background-color: var(--tertiary-bg);
+  color: var(--secondary-bg);
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   font-size: 1rem;
+  flex-wrap: wrap;
+  width: 100px;
+  border-radius: 5px;
 }
 
 input[type="text"]#usernameField {
   background-color: var(--main-bg);
 }
 
-.formContainer {
+input[type="password"]#passwordField {
   background-color: var(--main-bg);
+}
+
+.formContainer {
+  background-color: var(--primary-bg);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  outline: 2px solid #252827;
+  border-radius: 3px;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
