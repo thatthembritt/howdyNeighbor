@@ -1,34 +1,62 @@
-/* .login-form {
-  max-width: 300px;
-}
-.login-form-forgot {
-  float: right;
-}
-.ant-col-rtl .login-form-forgot {
-  float: left;
-}
-.login-form-button {
-  width: 100%;
-} */
-
 :root {
-  --main-bg: #fcc931;
+  --main-bg: #fff6ea;
+  --primary-bg: #b3d0b3;
+  --secondary-bg: #252827;
+  --tertiary-bg: #fcc931;
 }
 
-.btn-primary {
-  background-color: var(--main-bg);
-  color: #252827;
-}
-
-.btn-sm {
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
+#btn-primary-login {
+  margin-top: 30px;
+  background-color: var(--tertiary-bg);
+  color: var(--secondary-bg);
+  border-radius: 5px;
+  text-align: center;
+  width: 66px;
+  font-weight: bold;
+  display: flex;
 }
 
 input[type="text"]#usernameField {
   background-color: var(--main-bg);
+  align-items: center;
+}
+
+input[type="password"]#passwordField {
+  background-color: var(--main-bg);
+}
+
+.formLabelUsername {
+  font-weight: bold;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formLabelPassword {
+  font-weight: bold;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .formContainer {
-  background-color: var(--main-bg);
+  background-color: var(--primary-bg);
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  outline: 2px solid #252827;
+  border-radius: 3px;
+}
+
+#inputFields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
