@@ -5,7 +5,12 @@ import { Form, Button } from "react-bootstrap";
 import { FILTER_HELPERS } from "../../utils/mutations";
 import { gql, useMutation } from "@apollo/client";
 
-export default function Search() {
+
+const Search = () => {
+  const [filterHelpers] = useMutation(FILTER_HELPERS);
+  //const [formInput, setFormInput] = useState([]);
+
+  //filterHelpers({variables: {yard_help: true}})
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
@@ -13,10 +18,10 @@ export default function Search() {
 
     console.log(Object.keys(formData));
     console.log(formData);
-    //const [formInput, setFormInput] = useState([]);
-    //const [filterHelpers] = useMutation(FILTER_HELPERS);
-    //filterHelpers({variables: {yard_help: true}})
 
+    const input = Object.keys(formData);
+    console.log(input);
+    //const boolean = true;
   };
   // pull all values from (Object.keys(formData) and set them as true and query.
 
@@ -89,3 +94,4 @@ export default function Search() {
     </Form>
   );
 }
+export default Search;
