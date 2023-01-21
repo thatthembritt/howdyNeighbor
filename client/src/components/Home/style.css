@@ -1,0 +1,43 @@
+.cardStyle {
+  background-color: #b3d0b3;
+  text-align: center;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+#homepageHeader {
+  font-size: 60px;
+  text-align: center;
+}
+
+.cardDesign {
+  display: flex;
+  flex-direction: row;
+  align-content: space-evenly;
+  outline: none;
+  outline: 2px solid black;
+  border-radius: 5px;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardBody {
+  background-color: #b3d0b3;
+  text-align: center;
+  width: 300px;
+}
+
+#cardPic {
+  width: 300px;
+  outline: none;
+}
+
+.homepageCardContainer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-content: space-evenly;
+}

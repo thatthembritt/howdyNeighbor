@@ -45,20 +45,22 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const AuthWrapper = ({isAuthenticated}) => {
-  return isAuthenticated ? (
-    <Navigate to="/search" replace />
-  ) : (
-    <Navigate to="/home" replace />
-  );
+const AuthWrapper = ({ isAuthenticated }) => {
+  // console.log(isAuthenticated);
+  // return isAuthenticated ? (
+  //   <Navigate to="/search" replace />
+  // ) : (
+  //   <Navigate to="/home" replace />
+  //   );
+  return <Navigate to="/home" replace />;
 };
 
-const Logout = ({isAuthenticated}) => {
+const Logout = ({ isAuthenticated }) => {
   if (isAuthenticated) {
-    Auth.logout("id_token")
-    return <Navigate to="/home" replace />
+    Auth.logout("id_token");
+    return <Navigate to="/home" replace />;
   }
-}
+};
 
 function App() {
   const isAuthenticated = () => {
@@ -67,29 +69,32 @@ function App() {
     } else {
       return false;
     }
-  }
+  };
   if (isAuthenticated()) {
     return (
       <ApolloProvider client={client}>
         <Router>
-        <>
-          <NavbarLoggedIn />
-          <Routes>
-            <Route
-              path="/"
-              element={<AuthWrapper isAuthenticated={isAuthenticated} />}
-            />
-            <Route path="/search" element={<Search />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/logout" element={<Logout isAuthenticated={isAuthenticated} />} />
-            <Route
-              path="*"
-              element={<h1 className="display-2">Wrong page!</h1>}
-            />
-          </Routes>
-          <Footer />
-        </>
+          <>
+            <NavbarLoggedIn />
+            <Routes>
+              <Route
+                path="/"
+                element={<AuthWrapper isAuthenticated={isAuthenticated} />}
+              />
+              <Route path="/search" element={<Search />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/donate" element={<Donate />} />
+              <Route
+                path="/logout"
+                element={<Logout isAuthenticated={isAuthenticated} />}
+              />
+              <Route
+                path="*"
+                element={<h1 className="display-2">Wrong page!</h1>}
+              />
+            </Routes>
+            <Footer />
+          </>
         </Router>
       </ApolloProvider>
     );
@@ -97,25 +102,25 @@ function App() {
     return (
       <ApolloProvider client={client}>
         <Router>
-        <>
-          <Navbar />
-          <Routes>
-            <Route
-              path="/"
-              element={<AuthWrapper isAuthenticated={isAuthenticated} />}
-            />
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/donate" element={<Donate />} />
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="*"
-              element={<h1 className="display-2">Wrong page!</h1>}
-            />
-          </Routes>
-          <Footer />
-        </>
+          <>
+            <Navbar />
+            <Routes>
+              <Route
+                path="/"
+                element={<AuthWrapper isAuthenticated={isAuthenticated} />}
+              />
+              <Route path="/home" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/donate" element={<Donate />} />
+              <Route path="/login" element={<Login />} />
+              <Route
+                path="*"
+                element={<h1 className="display-2">Wrong page!</h1>}
+              />
+            </Routes>
+            <Footer />
+          </>
         </Router>
       </ApolloProvider>
     );
