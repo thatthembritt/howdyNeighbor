@@ -19,7 +19,7 @@ export default function NavbarLoggedIn({ currentPage, handlePageChange }) {
         </li>
         <li className="nav-item">
           <a
-            href="/About"
+            href="/about"
             onClick={() => handlePageChange('About')}
             className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}
           >
@@ -28,7 +28,7 @@ export default function NavbarLoggedIn({ currentPage, handlePageChange }) {
         </li>
         <li className="nav-item">
           <a
-            href="/Donate"
+            href="/donate"
             onClick={() => handlePageChange('Donate')}
             className={currentPage === 'Donate' ? 'nav-link active' : 'nav-link'}
           >
