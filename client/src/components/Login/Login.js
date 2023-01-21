@@ -68,8 +68,10 @@ const Login = () => {
         >
           Something went wrong with your login credentials!
         </Alert>
-        <Form.Group className="inputFields">
-          <Form.Label htmlFor="username">USERNAME</Form.Label>
+        <Form.Group id="inputFields">
+          <Form.Label className="formLabelUsername" htmlFor="username">
+            USERNAME
+          </Form.Label>
           <FormControl
             type="text"
             id="usernameField"
@@ -79,13 +81,12 @@ const Login = () => {
             value={userFormData.username}
             required
           />
-          <FormControl.Feedback type="invalid">
-            Username is required!
-          </FormControl.Feedback>
         </Form.Group>
 
-        <Form.Group className="inputFields">
-          <Form.Label htmlFor="password">PASSWORD</Form.Label>
+        <Form.Group id="inputFields">
+          <Form.Label className="formLabelPassword" htmlFor="password">
+            PASSWORD
+          </Form.Label>
           <FormControl
             type="password"
             id="passwordField"
@@ -95,18 +96,15 @@ const Login = () => {
             value={userFormData.password}
             required
           />
-          <FormControl.Feedback type="invalid">
-            Password is required!
-          </FormControl.Feedback>
         </Form.Group>
       </Form>
       <Button
         disabled={!(userFormData.username && userFormData.password)}
         type="submit"
-        className="btn btn-primary mx-auto"
+        className="btn-primary"
         size="sm"
       >
-        SUBMIT
+        SIGN IN
       </Button>
     </Container>
   );
