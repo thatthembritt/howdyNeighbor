@@ -30,7 +30,7 @@ class CheckoutForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <CardSection />
           <button disabled={!this.props.stripe} className="btn-pay">
-            Donate Now
+            Donate Here Today!
           </button>
         </form>
       </div>
