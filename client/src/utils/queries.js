@@ -17,27 +17,29 @@ export const GET_ME = gql`
 
 export const FILTER_HELPERS = gql`
   query filterHelpers(
-    $yardHelp: Boolean
-    $houseHelp: Boolean
-    $techHelp: Boolean
-    $autoHelp: Boolean
+    $yardHelp: Boolean,
+    $houseHelp: Boolean,
+    $techHelp: Boolean,
+    $autoHelp: Boolean,
     $petHelp: Boolean
   ) {
     filterHelpers(
-      yard_help: $yardHelp
-      house_help: $houseHelp
-      tech_help: $techHelp
-      auto_help: $autoHelp
-      pet_help: $petHelp
+      yardHelp: $yardHelp,
+      houseHelp: $houseHelp,
+      techHelp: $techHelp,
+      autoHelp: $autoHelp,
+      petHelp: $petHelp
     ) {
+      auto_help
+      email
       first_name
       last_name
-      email
-      yard_help
       house_help
-      tech_help
-      auto_help
       pet_help
+      tech_help
+      yard_help
     }
   }`
-;
+  ;
+
+

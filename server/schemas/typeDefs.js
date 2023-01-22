@@ -15,11 +15,11 @@ const typeDefs = gql`
     first_name: String
     last_name: String
     email: String
-    yard_help: Boolean
-    house_help: Boolean
-    tech_help: Boolean
-    auto_help: Boolean
-    pet_help: Boolean
+    yardHelp: Boolean
+    houseHelp: Boolean
+    techHelp: Boolean
+    autoHelp: Boolean
+    petHelp: Boolean
   }
 
   type Auth {
@@ -32,11 +32,11 @@ const typeDefs = gql`
     users: [User]!
     helpers: [Helper]!
     filterHelpers(
-      yard_help: Boolean
-      house_help: Boolean
-      tech_help: Boolean
-      auto_help: Boolean
-      pet_help: Boolean
+      yardHelp: Boolean
+      houseHelp: Boolean
+      techHelp: Boolean
+      autoHelp: Boolean
+      petHelp: Boolean
     ): [Helper]
   }
 
