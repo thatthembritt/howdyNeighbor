@@ -14,7 +14,6 @@ const Donate = () => {
         <div>
           <Elements stripe={stripePromise}>
             <CheckoutForm />
-            <p>test</p>
           </Elements>
         </div>
       </div>

@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import "./style.css";
 //import {} from "../../utils/queries"
 import { Form, Button, CardGroup, Card, Col, Container, } from "react-bootstrap";
-import { FILTER_HELPERS } from "../../utils/mutations";
+import { FILTER_HELPERS } from "../../utils/queries";
 import { gql, useQuery } from "@apollo/client";
 const avatar = require("../../Assets/avatar.png");
 
 export default function Search() {
+  
   const [formInput, setFormInput] = useState({
     yard_help: "",
     house_help: "",
@@ -15,10 +16,9 @@ export default function Search() {
     pet_help: "",
   });
   //const [filterHelpers] = useMutation(FILTER_HELPERS);
-  //const [formInput, {loading, data, error}] = useQuery(FILTER_HELPERS, {
+  const {loading, formData, error} = useQuery(FILTER_HELPERS);
   //variables: {yard_help: formInput.yard_help, house_help: formInput.house_help, auto_help: formInput.auto_help, tech_help: formInput.tech_help, pet_help: formInput.pet_help}
   //})
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
     let myArray = [];
@@ -32,7 +32,6 @@ export default function Search() {
       myArray[i] = true;
     });
     console.log(formData);
-    formInput();
   };
   // pull all values from (Object.keys(formData) and set them as true and query.
 

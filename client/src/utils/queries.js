@@ -12,8 +12,8 @@ export const GET_ME = gql`
       last_name
       zip_code    
     }
-  }
-`;
+  }`
+;
 
 export const FILTER_HELPERS = gql`
   query filterHelpers(
@@ -39,5 +39,5 @@ export const FILTER_HELPERS = gql`
       auto_help
       pet_help
     }
-  }
-`;
+  }`
+;
