@@ -12,6 +12,10 @@
 }
 
 .cardDesign {
+  outline: 2px solid black;
+}
+
+/* .cardDesign {
   display: flex;
   flex-direction: row;
   align-content: space-evenly;
@@ -21,7 +25,7 @@
   margin-top: auto;
   margin-left: auto;
   margin-right: auto;
-}
+}  */
 
 .cardBody {
   background-color: #b3d0b3;
@@ -37,7 +41,6 @@
 .homepageCardContainer {
   margin-top: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: row;
-  align-content: space-evenly;
 }
