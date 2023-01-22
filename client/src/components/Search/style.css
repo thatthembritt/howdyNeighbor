@@ -1,3 +1,4 @@
+
 :root{
 --main-bg: #FFF6EA;
   --primary-bg: #B3D0B3;
@@ -106,3 +107,4 @@ border-radius: 5px;
 }
 
 .helper input:checked + span{background-color: var(--primary-bg);}
+
