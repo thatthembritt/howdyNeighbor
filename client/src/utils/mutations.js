@@ -16,8 +16,8 @@ export const LOGIN_USER = gql`
         zip_code
       }
     }
-  }
-`; 
+  }`
+; 
 
 // pulled this querry from the sandbox that successfully added a user
 export const ADD_USER = gql`
@@ -34,8 +34,8 @@ mutation addUser($username: String, $email: String, $password: String, $firstNam
       zip_code
     }
   }
-}
-`; 
+}`
+; 
 
 export const ADD_HELPER = gql`
   mutation addHelper(
@@ -50,5 +50,5 @@ export const ADD_HELPER = gql`
     $pet_help: Boolean!
   ) {
     addHelper(first_name: $first_name, last_name: $last_name, email: $email, image: $image, yard_help: $yard_help, house_help: $yard_help, tech_help: $tech_help, auto_help: $auto_help, pet_help: $pet_help)
-  }
-`;
+  }`
+;
