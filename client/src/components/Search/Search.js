@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./style.css";
 //import {} from "../../utils/queries"
 import { Form, Button, CardGroup, Card, Col } from "react-bootstrap";
@@ -11,23 +11,25 @@ export default function Search() {
     house_help: "",
     auto_help: "",
     tech_help: "",
-    pet_help: ""
+    pet_help: "",
   });
   //const [filterHelpers] = useMutation(FILTER_HELPERS);
   //const [formInput, {loading, data, error}] = useQuery(FILTER_HELPERS, {
-    //variables: {yard_help: formInput.yard_help, house_help: formInput.house_help, auto_help: formInput.auto_help, tech_help: formInput.tech_help, pet_help: formInput.pet_help}
+  //variables: {yard_help: formInput.yard_help, house_help: formInput.house_help, auto_help: formInput.auto_help, tech_help: formInput.tech_help, pet_help: formInput.pet_help}
   //})
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    let myArray = []
+    let myArray = [];
 
     const formData = Object.fromEntries(new FormData(event.target).entries());
     console.log(Object.keys(formData));
-    for(let key in formData){
+    for (let key in formData) {
       formData[key] = Boolean(formData[key]);
     }
-    Object.keys(myArray).forEach(i => {myArray[i] = true});
+    Object.keys(myArray).forEach((i) => {
+      myArray[i] = true;
+    });
     console.log(formData);
     formInput();
   };

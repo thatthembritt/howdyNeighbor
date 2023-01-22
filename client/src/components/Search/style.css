@@ -1,0 +1,23 @@
+.nav-flex {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+li {
+  margin: 10px;
+}
+
+.container-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#linkColor {
+  color: black;
+}
+
+#navTabs {
+  border-color: none;
+}
