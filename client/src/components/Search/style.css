@@ -1,0 +1,110 @@
+
+:root{
+--main-bg: #FFF6EA;
+  --primary-bg: #B3D0B3;
+  --secondary-bg: #252827;
+  --tertiary-bg: #FCC931;
+}
+
+
+.checkboxContainer {
+  font-weight: bold;
+  margin: 0 auto; text-align: center;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 38px; 
+  margin: 100px auto;
+}
+
+.btncontainer {
+text-align: center;
+}
+
+.helper label span {
+  margin: 4px;
+  background-color: var(--tertiary-bg);
+  border-radius: 4px;
+  border: 1px solid #fff;
+  overflow: hidden;
+  float: left;
+  height: 40px;
+  width: 100px;
+  text-align: center;
+  margin: 15px;
+  
+}
+.btn {
+    background-color: var(--tertiary-bg);
+    
+}
+
+.checkoption {
+   display: none;
+}
+
+.formLabelPassword {
+  font-weight: bold;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.formContainer {
+  background-color: var(--primary-bg);
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-right: auto;
+  margin-left: auto;
+  outline: 2px solid #252827;
+  border-radius: 3px;
+}
+
+.row{
+  padding: 45px;
+}
+
+.card{
+  margin: 5px;
+  border: 0px;
+  width: 300px;
+  
+}
+
+.cardbody{
+  background-color: var(--primary-bg);
+  border-radius: 5px;
+}
+
+#image{
+  width: 250px;
+  outline: none;
+  padding: 10px;
+  text-align: center;
+}
+.cardHeader{
+background-color: var(--tertiary-bg);
+text-align: center;
+padding: 10px;
+margin-bottom: 5px;
+border-radius: 5px;
+}
+
+.cardFooter{
+background-color: var(--tertiary-bg);
+text-align: center;
+padding: 10px;
+margin-top: 5px;
+border-radius: 5px;
+}
+
+.cardText{
+  text-align: center;
+}
+
+.helper input:checked + span{background-color: var(--primary-bg);}
+

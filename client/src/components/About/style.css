@@ -1,0 +1,37 @@
+.cardBodyAbout {
+  background-color: #b3d0b3;
+  text-align: center;
+  width: 300px;
+  border-radius: 2px;
+}
+
+#cardPicAbout {
+  width: 300px;
+  outline: none;
+}
+
+#btn-primary-about {
+  margin-top: 20px;
+  background-color: var(--tertiary-bg);
+  color: var(--secondary-bg);
+  border-radius: 5px;
+  align-self: center;
+  font-weight: bold;
+  border: 2px solid #252827;
+}
+
+.aboutCardContainer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-content: space-evenly;
+}
+
+.cardStyleAbout {
+  background-color: #b3d0b3;
+  text-align: center;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}

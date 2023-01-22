@@ -1,52 +1,52 @@
 [
-    {
-        "first_name": "James",
-        "last_name": "Smith",
-        "email": "james.smith@gmail.com",
-        "yard_help": true,
-        "house_help": false,
-        "tech_help": false,
-        "auto_help": false,
-        "pet_help": false
-    },
-    {
-        "first_name": "Daniel",
-        "last_name": "Hernandez",
-        "email": "dhernandez@gmail.com",
-        "yard_help": false,
-        "house_help": true,
-        "tech_help": false,
-        "auto_help": false,
-        "pet_help": false
-    },
-    {
-        "first_name": "Lana",
-        "last_name": "Liel",
-        "email": "lana@yahoo.com",
-        "yard_help": false,
-        "house_help": false,
-        "tech_help": true,
-        "auto_help": false,
-        "pet_help": false
-    },
-    {
-        "first_name": "Michael",
-        "last_name": "Giordano",
-        "email": "michael@gmail.com",
-        "yard_help": false,
-        "house_help": false,
-        "tech_help": false,
-        "auto_help": true,
-        "pet_help": true
-    },
-    {
-        "first_name": "Britt",
-        "last_name": "Boyd",
-        "email": "brttnybyd@gmail.com",
-        "yard_help": true,
-        "house_help": true,
-        "tech_help": true,
-        "auto_help": true,
-        "pet_help": true
-    }
+	{
+		"first_name": "James",
+		"last_name": "Smith",
+		"email": "james.smith@gmail.com",
+		"yardHelp": true,
+		"houseHelp": false,
+		"techHelp": false,
+		"autoHelp": false,
+		"petHelp": false
+	},
+	{
+		"first_name": "Daniel",
+		"last_name": "Hernandez",
+		"email": "dhernandez@gmail.com",
+		"yardHelp": false,
+		"houseHelp": true,
+		"techHelp": false,
+		"autoHelp": false,
+		"petHelp": false
+	},
+	{
+		"first_name": "Lana",
+		"last_name": "Lial",
+		"email": "lana@yahoo.com",
+		"yardHelp": false,
+		"houseHelp": false,
+		"techHelp": true,
+		"autoHelp": false,
+		"petHelp": false
+	},
+	{
+		"first_name": "Michael",
+		"last_name": "Giordano",
+		"email": "michael@gmail.com",
+		"yardHelp": false,
+		"houseHelp": false,
+		"techHelp": false,
+		"autoHelp": true,
+		"petHelp": true
+	},
+	{
+		"first_name": "Britt",
+		"last_name": "Boyd",
+		"email": "brttnybyd@gmail.com",
+		"yardHelp": true,
+		"houseHelp": true,
+		"techHelp": true,
+		"autoHelp": true,
+		"petHelp": true
+	}
 ]

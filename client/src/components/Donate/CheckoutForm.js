@@ -1,6 +1,6 @@
 import React from "react";
 import { ElementsConsumer, CardElement } from "@stripe/react-stripe-js";
-
+import { Container, Button, Card } from "react-bootstrap"; 
 import CardSection from "./CardSection";
 
 class CheckoutForm extends React.Component {
@@ -25,14 +25,36 @@ class CheckoutForm extends React.Component {
     return (
       <div>
         <div class="product-info">
-          <h4 className="suggested-donation">Suggested donation $5</h4>
+          <Card>
+            <Card.Header id="statement">
+              <Card.Text>
+                <h2>"ALONE, WE CAN DO SO LITTLE,</h2>
+              </Card.Text>
+              <Card.Text>
+                <h2>
+                  <b>TOGETHER</b>, WE CAN DO SO MUCH"
+                </h2>
+              </Card.Text>
+            </Card.Header>
+
+            <div id="submit">
+              <form onSubmit={this.handleSubmit}>
+                <div>
+                  <h5>HOWDY NEIGHBOR IS COMMUNITY DRIVEN & BACKED BY CHARITABLE DONATIONS.</h5>
+                </div>
+                <h7 className="suggested-donation">Suggested donation $5</h7>
+                <div>
+                  <button disabled={!this.props.stripe} className="btn-pay">
+                    <b>Donate Here Today!</b>
+                  </button>
+                </div>
+                <Card.Footer id="cardDetails">
+                  <CardSection />
+                </Card.Footer>
+              </form>
+            </div>
+          </Card>
         </div>
-        <form onSubmit={this.handleSubmit}>
-          <CardSection />
-          <button disabled={!this.props.stripe} className="btn-pay">
-            Donate Now
-          </button>
-        </form>
       </div>
     );
   }
