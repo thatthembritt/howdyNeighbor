@@ -13,3 +13,11 @@ li {
   flex-direction: row;
   justify-content: space-between;
 }
+
+#linkColor {
+  color: black;
+}
+
+#navTabs {
+  border-color: none;
+}

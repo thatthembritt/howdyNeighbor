@@ -11,9 +11,10 @@
   color: var(--secondary-bg);
   border-radius: 5px;
   text-align: center;
-  width: 66px;
+  width: 76px;
   font-weight: bold;
   display: flex;
+  border: 2px solid #252827;
 }
 input[type="text"]#usernameField {
   background-color: var(--main-bg);
