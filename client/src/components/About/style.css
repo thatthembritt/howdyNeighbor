@@ -1,8 +1,13 @@
-.cardBody {
+.cardBodyAbout {
   background-color: #b3d0b3;
   text-align: center;
   width: 300px;
   border-radius: 2px;
+}
+
+#cardPicAbout {
+  width: 300px;
+  outline: none;
 }
 
 #btn-primary-about {

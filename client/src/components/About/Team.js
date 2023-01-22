@@ -10,11 +10,11 @@ export default function Team({ person }) {
         <Col lg={12} sm={6}>
           <Card style={{ width: "18rem" }}>
             <Card.Img
-              id="cardPic"
+              id="cardPicAbout"
               variant="top"
               src={`../../${person.img}.jpg`}
             />
-            <Card.Body className="cardBody">
+            <Card.Body className="cardBodyAbout">
               <Card.Title>{person.name}</Card.Title>
               <Button
                 a
