@@ -46,18 +46,20 @@ const client = new ApolloClient({
 });
 
 const AuthWrapper = ({ isAuthenticated }) => {
-  // console.log(isAuthenticated);
-  // return isAuthenticated ? (
-  //   <Navigate to="/search" replace />
-  // ) : (
-  //   <Navigate to="/home" replace />
-  //   );
+  console.log(isAuthenticated);
+  return isAuthenticated ? (
+    <Navigate to="/search" replace />
+  ) : (
+    <Navigate to="/home" replace />
+    );
   return <Navigate to="/home" replace />;
 };
 
 const Logout = ({ isAuthenticated }) => {
   if (isAuthenticated) {
     Auth.logout("id_token");
+    localStorage.removeItem("id_token");
+    isAuthenticated = false;
     return <Navigate to="/home" replace />;
   }
 };
@@ -82,6 +84,7 @@ function App() {
                 element={<AuthWrapper isAuthenticated={isAuthenticated} />}
               />
               <Route path="/search" element={<Search />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/donate" element={<Donate />} />
               <Route
@@ -90,7 +93,7 @@ function App() {
               />
               <Route
                 path="*"
-                element={<h1 className="display-2">Wrong page!</h1>}
+                element={<Home />}
               />
             </Routes>
             <Footer />
@@ -116,7 +119,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route
                 path="*"
-                element={<h1 className="display-2">Wrong page!</h1>}
+                element={<Home />}
               />
             </Routes>
             <Footer />
