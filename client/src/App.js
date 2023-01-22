@@ -52,7 +52,7 @@ const AuthWrapper = ({ isAuthenticated }) => {
   ) : (
     <Navigate to="/home" replace />
     );
-  return <Navigate to="/home" replace />;
+  // return <Navigate to="/home" replace />;
 };
 
 const Logout = ({ isAuthenticated }) => {
