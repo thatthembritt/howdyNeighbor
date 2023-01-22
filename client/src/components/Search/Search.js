@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 //import {} from "../../utils/queries"
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, CardGroup, Card, Col } from "react-bootstrap";
 import { FILTER_HELPERS } from "../../utils/mutations";
 import { gql, useQuery } from "@apollo/client";
 
@@ -37,6 +37,7 @@ export default function Search() {
 
   return (
     <Form onSubmit={handleFormSubmit}>
+      <h2>What type of help do you need?</h2>
       <div className="container">
         <div className="helper">
           <label>
@@ -102,6 +103,44 @@ export default function Search() {
       <Button variant="primary" type="submit">
         Submit
       </Button>
+      <CardGroup>
+        <Card>
+          <Card.Body>
+            <Card.Title></Card.Title>
+            <Card.Text>
+              <p>First Name Last Name</p>
+              <p>image</p>
+              <p>Help Available</p>
+              <p>Zip Code</p>
+              <p>contact email</p>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Card.Title></Card.Title>
+            <Card.Text>
+              <p>First Name Last Name</p>
+              <p>image</p>
+              <p>Help Available</p>
+              <p>Zip Code</p>
+              <p>contact email</p>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Card.Title></Card.Title>
+            <Card.Text>
+              <p>First Name Last Name</p>
+              <p>image</p>
+              <p>Help Available</p>
+              <p>Zip Code</p>
+              <p>contact email</p>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </CardGroup>
     </Form>
   );
-}
+};
