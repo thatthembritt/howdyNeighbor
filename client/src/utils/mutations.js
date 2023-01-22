@@ -18,32 +18,7 @@ export const LOGIN_USER = gql`
     }
   }
 `; 
-export const FILTER_HELPERS = gql`
-  mutation filterHelpers(
-    $yardHelp: Boolean
-    $houseHelp: Boolean
-    $techHelp: Boolean
-    $autoHelp: Boolean
-    $petHelp: Boolean
-  ) {
-    filterHelpers(
-      yard_help: $yardHelp
-      house_help: $houseHelp
-      tech_help: $techHelp
-      auto_help: $autoHelp
-      pet_help: $petHelp
-    ) { 
-    first_name
-    last_name
-    email
-    yard_help
-    house_help
-    tech_help
-    auto_help
-    pet_help
-    }
-  }
-`;
+
 // pulled this querry from the sandbox that successfully added a user
 export const ADD_USER = gql`
 mutation addUser($username: String, $email: String, $password: String, $firstName: String, $lastName: String, $zipCode: String) {
