@@ -6,33 +6,33 @@ import Team from "./Team";
 const teamMembers = [
   {
     id: 1,
-    name: "Marcelo Andres Perez",
+    name: "Marcelo A. Perez",
     repo: "https://github.com/mandresp",
-    // img: "perez",
+    img: "marcelo-perez",
   },
   {
     id: 2,
     name: "Britt Boyd",
     repo: "https://github.com/thatthembritt",
-    // img: 'BrittBoyd'
+    img: "BrittBoyd",
   },
   {
     id: 3,
     name: "Charles Dykstra",
     repo: "https://github.com/cdthe1nonly1",
-    // img: 'Charley'
+    img: "Charley",
   },
   {
     id: 4,
     name: "Michael Giordano",
     repo: "https://github.com/MG1919",
-    // img: 'michael'
+    img: "michael",
   },
   {
     id: 5,
     name: "Zach Weston",
     repo: "https://github.com/zestnachow",
-    // img: 'zach'
+    img: "zach",
   },
 ];
 
