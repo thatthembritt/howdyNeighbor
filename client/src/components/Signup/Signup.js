@@ -69,7 +69,7 @@ const Signup = () => {
         >
           Something went wrong with your login credentials!
         </Alert>
-        <Form.Group id="inputFields">
+        <Form.Group id="inputFieldsSignup">
           <Form.Label htmlFor="firstName">FIRST NAME</Form.Label>
           <FormControl
             type="text"
@@ -89,7 +89,7 @@ const Signup = () => {
             required
           />
         </Form.Group>
-        <Form.Group id="inputFields">
+        <Form.Group id="inputFieldsSignup">
           <Form.Label htmlFor="username">USERNAME</Form.Label>
           <FormControl
             type="text"
@@ -100,7 +100,7 @@ const Signup = () => {
             required
           />
         </Form.Group>
-        <Form.Group id="inputFields">
+        <Form.Group id="inputFieldsSignup">
           <Form.Label htmlFor="zipCode">ZIP CODE</Form.Label>
           <FormControl
             type="text"
@@ -111,7 +111,7 @@ const Signup = () => {
             required
           />
         </Form.Group>
-        <Form.Group id="inputFields">
+        <Form.Group id="inputFieldsSignup">
           <Form.Label htmlFor="email">EMAIL</Form.Label>
           <FormControl
             type="text"
@@ -123,7 +123,7 @@ const Signup = () => {
           />
         </Form.Group>
 
-        <Form.Group id="inputFields">
+        <Form.Group id="inputFieldsSignup">
           <Form.Label htmlFor="password">PASSWORD</Form.Label>
           <FormControl
             type="password"
@@ -134,11 +134,11 @@ const Signup = () => {
             required
           />
         </Form.Group>
-        <Form.Group id="inputFields">
+        <Form.Group id="inputFieldsSignup">
           <Button
             disabled={!(userFormData.email && userFormData.password)}
             type="submit"
-            className="btn-primary-signup"
+            id="btn-primary-signup"
             size="sm"
           >
             SUBMIT
