@@ -18,28 +18,28 @@ const resolvers = {
     },
 
     filterHelpers: async (parent, args, context) => {
-     if (context.user) {
+     //if (context.user) {
        return await Helper.find({
          $or: [
            {
-             yard_help: args.yard_help && true,
+             yardHelp: args.yard_help && true,
            },
            {
-             house_help: args.house_help && true,
+             houseHelp: args.house_help && true,
            },
            {
-             tech_help: args.tech_help && true,
+             techHelp: args.tech_help && true,
            },
            {
-             auto_help: args.auto_help && true,
+             autoHelp: args.auto_help && true,
            },
            {
-             pet_help: args.pet_help && true,
+             petHelp: args.pet_help && true,
            },
          ],
        });
-     }
-    throw new AuthenticationError("Must be logged in");
+     //}
+    //throw new AuthenticationError("Must be logged in");
     },
   },
 
