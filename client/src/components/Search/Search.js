@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./style.css";
 //import {} from "../../utils/queries"
-import { Form, Button, CardGroup, Card, Col } from "react-bootstrap";
+import { Form, Button, CardGroup, Card, Col, Container, } from "react-bootstrap";
 import { FILTER_HELPERS } from "../../utils/mutations";
 import { gql, useQuery } from "@apollo/client";
+const avatar = require("../../Assets/avatar.png");
 
 export default function Search() {
   const [formInput, setFormInput] = useState({
@@ -38,7 +39,7 @@ export default function Search() {
   return (
     <Form onSubmit={handleFormSubmit}>
       <h2>What type of help do you need?</h2>
-      <div className="container">
+      <div className="checkboxContainer">
         <div className="helper">
           <label>
             <input
@@ -100,45 +101,71 @@ export default function Search() {
           </label>
         </div>
       </div>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-      <CardGroup>
-        <Card>
-          <Card.Body>
-            <Card.Title></Card.Title>
-            <Card.Text>
-              <p>First Name Last Name</p>
-              <p>image</p>
+      <Container class="btncontainer">
+        <Button class="btn" type="submit">
+          FIND A NEIGHBOR HELPER NEAR YOU
+        </Button>
+      </Container>
+      <CardGroup class="row row-cols-1 row-cols-md-3">
+        <Card class=" col card">
+          <Card.Title class="cardHeader">Full Name</Card.Title>
+          <Card.Body class="cardbody">
+            <Card.Text class="cardText">
+              <Card.Img id="image" img src={avatar}></Card.Img>
               <p>Help Available</p>
-              <p>Zip Code</p>
-              <p>contact email</p>
             </Card.Text>
           </Card.Body>
+          <footer class="cardFooter">contact.email@gmail.com</footer>
         </Card>
-        <Card>
-          <Card.Body>
-            <Card.Title></Card.Title>
-            <Card.Text>
-              <p>First Name Last Name</p>
-              <p>image</p>
+        <Card class=" col card">
+          <Card.Title class="cardHeader">Full Name</Card.Title>
+          <Card.Body class="cardbody">
+            <Card.Text class="cardText">
+              <Card.Img id="image" img src={avatar}></Card.Img>
               <p>Help Available</p>
-              <p>Zip Code</p>
-              <p>contact email</p>
             </Card.Text>
           </Card.Body>
+          <footer class="cardFooter">contact.email@gmail.com</footer>
         </Card>
-        <Card>
-          <Card.Body>
-            <Card.Title></Card.Title>
-            <Card.Text>
-              <p>First Name Last Name</p>
-              <p>image</p>
+        <Card class=" col card">
+          <Card.Title class="cardHeader">Full Name</Card.Title>
+          <Card.Body class="cardbody">
+            <Card.Text class="cardText">
+              <Card.Img id="image" img src={avatar}></Card.Img>
               <p>Help Available</p>
-              <p>Zip Code</p>
-              <p>contact email</p>
             </Card.Text>
           </Card.Body>
+          <footer class="cardFooter">contact.email@gmail.com</footer>
+        </Card>
+        <Card class=" col card">
+          <Card.Title class="cardHeader">Full Name</Card.Title>
+          <Card.Body class="cardbody">
+            <Card.Text class="cardText">
+              <Card.Img id="image" img src={avatar}></Card.Img>
+              <p>Help Available</p>
+            </Card.Text>
+          </Card.Body>
+          <footer class="cardFooter">contact.email@gmail.com</footer>
+        </Card>
+        <Card class=" col card">
+          <Card.Title class="cardHeader">Full Name</Card.Title>
+          <Card.Body class="cardbody">
+            <Card.Text class="cardText">
+              <Card.Img id="image" img src={avatar}></Card.Img>
+              <p>Help Available</p>
+            </Card.Text>
+          </Card.Body>
+          <footer class="cardFooter">contact.email@gmail.com</footer>
+        </Card>
+        <Card class=" col card">
+          <Card.Title class="cardHeader">Full Name</Card.Title>
+          <Card.Body class="cardbody">
+            <Card.Text class="cardText">
+              <Card.Img id="image" img src={avatar}></Card.Img>
+              <p>Help Available</p>
+            </Card.Text>
+          </Card.Body>
+          <footer class="cardFooter">contact.email@gmail.com</footer>
         </Card>
       </CardGroup>
     </Form>
