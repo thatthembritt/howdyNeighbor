@@ -6,18 +6,6 @@ import { gql, useLazyQuery } from "@apollo/client";
 const avatar = require("../../Assets/avatar.png");
 
 export default function Search() {
-  // const [formInput, setFormInput] = useState({
-  //   yardHelp: "",
-  //   houseHelp: "",
-  //   autoHelp: "",
-  //   techHelp: "",
-  //   petHelp: "",
-  // });
-  //const [filterHelpers] = useMutation(FILTER_HELPERS);
-  //const {loading, formData, error} = useQuery(FILTER_HELPERS);
-  //variables: {yardHelp: formInput.yardHelp, houseHelp: formInput.houseHelp, autoHelp: formInput.autoHelp, techHelp: formInput.techHelp, petHelp: formInput.petHelp}
-  //})
-
   const [searchedHelpers, setSearchedHelpers] = useState([]);
   const [options, { loading, error, data }] = useLazyQuery(FILTER_HELPERS);
   if (error) {
@@ -46,19 +34,17 @@ export default function Search() {
     const info = data;
     //info ? info.map() : "";
     console.log(info);
-    console.log(info.filterHelpers[0].email)
+    console.log(info.filterHelpers[0].email);
 
-    
-        const helperData = info.filterHelpers.map((helper) => ({
-          email: helper.email,
-          firstName: helper.first_name,
-          lastName: helper.last_name,
-        }));
-        console.log(helperData);
-        setSearchedHelpers(helperData);
-   };
+    const helperData = info.filterHelpers.map((helper) => ({
+      email: helper.email,
+      firstName: helper.first_name,
+      lastName: helper.last_name,
+    }));
+    console.log(helperData);
+    setSearchedHelpers(helperData);
+  };
 
-   
   // pull all values from (Object.keys(formData) and set them as true and query.
 
   return (
@@ -147,13 +133,7 @@ export default function Search() {
               <footer class="cardFooter">{helper.email}</footer>
             </Card>
           );
-        })};
-      
-
-
-
-
- 
+        })}
       </CardGroup>
     </Form>
   );
