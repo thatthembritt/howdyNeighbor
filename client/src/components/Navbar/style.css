@@ -18,6 +18,10 @@
   color: black;
 }
 
-#navTabs {
+.nav-tabs {
+  background-color: #fcc931;
   border-color: none;
+  outline: 2px solid #252827;
+  border-radius: 2px;
+  font-weight: bold;
 }

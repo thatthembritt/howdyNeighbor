@@ -5,7 +5,7 @@ const logo = require("../../Assets/howdyneighbor_4.png");
 
 export default function Navbar({ currentPage, handlePageChange }) {
   return (
-    <div className="container container-flex">
+    <div className="container container-flex navbar">
       <img src={logo} alt="logo"></img>
       <ul className="nav nav-tabs nav-flex">
         <li className="nav-item">
