@@ -62,4 +62,4 @@ Zach Weston: https://github.com/zestnachow
 
 ## URL:
 
-[Deployed Site](howdyneighbor.herokuapp.com/)
+[Deployed Site](howdy-neighbor.herokuapp.com/)
