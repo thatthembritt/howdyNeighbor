@@ -49,7 +49,7 @@ export default function Search() {
 
   return (
     <Form onSubmit={handleFormSubmit}>
-      <h2>What type of help do you need?</h2>
+      <h2 className="searchHeader">SELECT AT LEAST ONE OF THE OPTIONS BELOW</h2>
       <div className="checkboxContainer">
         <div className="helper">
           <label>
@@ -59,7 +59,7 @@ export default function Search() {
               className="checkoption"
               value="1"
             />
-            <span>Yard Help</span>
+            <span>YARD HELP</span>
           </label>
         </div>
 
@@ -71,7 +71,7 @@ export default function Search() {
               className="checkoption"
               value="1"
             />
-            <span>House Help</span>
+            <span>HOUSE HELP</span>
           </label>
         </div>
 
@@ -83,7 +83,7 @@ export default function Search() {
               className="checkoption"
               value="1"
             />
-            <span>Auto Help</span>
+            <span>AUTO HELP</span>
           </label>
         </div>
 
@@ -95,7 +95,7 @@ export default function Search() {
               className="checkoption"
               value="1"
             />
-            <span>Tech Help</span>
+            <span>TECH HELP</span>
           </label>
         </div>
 
@@ -108,29 +108,29 @@ export default function Search() {
               id="pet-help"
               value="1"
             />
-            <span>Pet Help</span>
+            <span>PET HELP</span>
           </label>
         </div>
       </div>
-      <Container class="btncontainer">
-        <Button class="btn" type="submit">
-          FIND A NEIGHBOR HELPER NEAR YOU
+      <Container className="btncontainer">
+        <Button id="btn-primary-search" type="submit">
+          FIND A NEIGHBOR NEAR YOU
         </Button>
       </Container>
-      <CardGroup class="row row-cols-1 row-cols-md-3">
+      <CardGroup className="row row-cols-1 row-cols-md-3">
         {searchedHelpers.map((helper) => {
           return (
-            <Card class=" col card">
-              <Card.Title class="cardHeader">
+            <Card className=" col card">
+              <Card.Title className="cardHeader">
                 {helper.firstName} {helper.lastName}
               </Card.Title>
-              <Card.Body class="cardbody">
-                <Card.Text class="cardText">
+              <Card.Body className="cardbody">
+                <Card.Text className="cardText">
                   <Card.Img id="image" img src={avatar}></Card.Img>
-                  <p>Help Available</p>
+                  <p>HELP AVAILABLE</p>
                 </Card.Text>
               </Card.Body>
-              <footer class="cardFooter">{helper.email}</footer>
+              <footer className="cardFooter">{helper.email}</footer>
             </Card>
           );
         })}
