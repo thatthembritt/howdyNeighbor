@@ -20,13 +20,14 @@ body {
 }
 
 .StripeElement {
-  margin: 15px auto;
-  padding: 10px 12px;
-  color: var(--secondary-bg);
-  background-color: white;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background-color: var(--primary-bg);
+    margin: 15px auto;
+    padding: 10px 12px;
+    width: 400px;
+    color: var( --secondary-bg);
+    background-color: white;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: var( --primary-bg);
 }
 
 .StripeElement--webkit-autofill {
