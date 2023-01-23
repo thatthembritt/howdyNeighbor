@@ -18,13 +18,12 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-  
-    
 }
 
 .StripeElement {
     margin: 15px auto;
     padding: 10px 12px;
+    width: 400px;
     color: var( --secondary-bg);
     background-color: white;
     border: 1px solid transparent;
@@ -82,7 +81,6 @@ body {
 
 .donate {
     justify-content: center;
-    
 }
 
 #submit {
