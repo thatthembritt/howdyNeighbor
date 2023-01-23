@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import About from "./components/About/About";
 import Donate from "./components/Donate/Donate";
-import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import NavbarLoggedIn from "./components/Navbar/NavbarLoggedIn";
 import Home from "./components/Home/Home";
@@ -51,7 +50,7 @@ const AuthWrapper = ({ isAuthenticated }) => {
     <Navigate to="/search" replace />
   ) : (
     <Navigate to="/home" replace />
-    );
+  );
   return <Navigate to="/home" replace />;
 };
 
@@ -91,12 +90,8 @@ function App() {
                 path="/logout"
                 element={<Logout isAuthenticated={isAuthenticated} />}
               />
-              <Route
-                path="*"
-                element={<Home />}
-              />
+              <Route path="*" element={<Home />} />
             </Routes>
-            <Footer />
           </>
         </Router>
       </ApolloProvider>
@@ -117,12 +112,8 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/donate" element={<Donate />} />
               <Route path="/login" element={<Login />} />
-              <Route
-                path="*"
-                element={<Home />}
-              />
+              <Route path="*" element={<Home />} />
             </Routes>
-            <Footer />
           </>
         </Router>
       </ApolloProvider>
