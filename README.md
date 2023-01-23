@@ -57,9 +57,21 @@ Michael Giordano: https://github.com/MG1919
 Zach Weston: https://github.com/zestnachow
 
 ## Screenshot:
+Website
+![Screenshot](./assets/website-Screenshot.png)
 
-![Screenshot](./public/website-screenshot.png)
+Excalidraw
+![Screenshot](./assets/excalidrawscreenshot.png)
 
 ## URL:
+Deployed Site
+[Howdy Nieghbor](howdy-neighbor.herokuapp.com/)
 
-[Deployed Site](howdy-neighbor.herokuapp.com/)
+Github
+[Repository](https://github.com/thatthembritt/howdyNeighbor)
+
+Figma
+[Design](https://www.figma.com/file/GvvqGzQppxUl3xzYcWsmcF/howdyneighbor?node-id=0%3A1&t=VPTT4d01lDSWVVWb-0)
+
+Trello
+[Kanban Board](https://trello.com/b/tdXd0ti9/howdy-neighbor)
