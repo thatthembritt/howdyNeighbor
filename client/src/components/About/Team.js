@@ -14,7 +14,7 @@ export default function Team({ person }) {
               variant="top"
               src={`../../${person.img}.jpg`}
             />
-            <Card.Body className="cardBodyAbout">
+            <Card.Body id="cardBodyAbout">
               <Card.Title>{person.name}</Card.Title>
               <Button
                 a

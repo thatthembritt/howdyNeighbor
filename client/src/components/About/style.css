@@ -1,4 +1,4 @@
-.cardBodyAbout {
+#cardBodyAbout {
   background-color: #b3d0b3;
   text-align: center;
   width: 300px;
@@ -9,7 +9,6 @@
   width: 300px;
   outline: none;
 }
-
 
 #btn-primary-about {
   margin-top: 20px;
@@ -35,4 +34,8 @@
   width: 300px;
   display: flex;
   justify-content: center;
+}
+
+.card {
+  background-color: #fff6ea;
 }

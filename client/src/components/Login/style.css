@@ -1,8 +1,8 @@
-:root{
---main-bg: #FFF6EA;
-  --primary-bg: #B3D0B3;
+:root {
+  --main-bg: #fff6ea;
+  --primary-bg: #b3d0b3;
   --secondary-bg: #252827;
-  --tertiary-bg: #FCC931;
+  --tertiary-bg: #fcc931;
 }
 
 #btn-primary-login {
@@ -10,10 +10,9 @@
   background-color: var(--tertiary-bg);
   color: var(--secondary-bg);
   border-radius: 5px;
-  text-align: center;
+  align-self: center;
   width: 76px;
   font-weight: bold;
-  display: flex;
   border: 2px solid #252827;
 }
 input[type="text"]#usernameField {
