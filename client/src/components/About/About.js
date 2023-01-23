@@ -1,6 +1,14 @@
 import React from "react";
 import Team from "./Team";
-import { Form, Button, CardGroup, Card, Row, Col, Container } from "react-bootstrap";
+import {
+  Form,
+  Button,
+  CardGroup,
+  Card,
+  Row,
+  Col,
+  Container,
+} from "react-bootstrap";
 // const perez = require("../../Assets/marcelo-perez.jpg");
 
 const teamMembers = [
@@ -40,7 +48,7 @@ export default function About() {
   return (
     <CardGroup className="row row-cols-1 row-cols-md-2 g-4">
       <Card>
-        <Card.Body>
+        <Card.Body className="cardTeam">
           {teamMembers.map((person) => (
             <Team person={person} key={person.id} />
           ))}
