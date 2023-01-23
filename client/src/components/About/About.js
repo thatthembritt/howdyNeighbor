@@ -1,6 +1,6 @@
 import React from "react";
 import Team from "./Team";
-
+import { Form, Button, CardGroup, Card, Row, Col, Container } from "react-bootstrap";
 // const perez = require("../../Assets/marcelo-perez.jpg");
 
 const teamMembers = [
@@ -38,10 +38,14 @@ const teamMembers = [
 
 export default function About() {
   return (
-    <div className="d-flex">
-      {teamMembers.map((person) => (
-        <Team person={person} key={person.id} />
-      ))}
-    </div>
+    <CardGroup className="row row-cols-1 row-cols-md-2 g-4">
+      <Card>
+        <Card.Body>
+          {teamMembers.map((person) => (
+            <Team person={person} key={person.id} />
+          ))}
+        </Card.Body>
+      </Card>
+    </CardGroup>
   );
 }
